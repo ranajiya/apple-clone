@@ -8,9 +8,10 @@ Title: Apple iPhone 15 Pro Max Black
 import * as THREE from 'three';
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
+const basePath = import.meta.env.MODE === 'development' ? '' : '/apple-clone';
 
 const Model = ({size, item, props}) => {
-  const { nodes, materials } = useGLTF('/models/scene.glb')
+  const { nodes, materials } = useGLTF(item.modelPath)
 
   const texture = useTexture(item.img);
   useEffect(() => {
@@ -254,6 +255,6 @@ const Model = ({size, item, props}) => {
   )
 }
 
-useGLTF.preload('/models/scene.glb')
+useGLTF.preload(basePath)
 
 export default Model;

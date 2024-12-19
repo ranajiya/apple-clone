@@ -5,7 +5,7 @@ import IPhone from "./IPhone"
 import { Suspense } from "react"
 import Loader from "./Loader"
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationState, size, item}) => {
-    console.log(size);
+  
 
     return (
     <View

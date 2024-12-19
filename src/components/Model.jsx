@@ -9,12 +9,17 @@ import { Canvas } from "@react-three/fiber"
 import { View } from "@react-three/drei"
 import { models, sizes } from "../constants"
 import { animateWithGsapTimeline } from "../utils/animations"
+
+/*  Added for deployment  */
+const basePath = import.meta.env.MODE === 'development' ? '' : '/apple-clone';
+
 const Model = () => {
   const [size, setSize] = useState('small');
   const [model, setModel] = useState({
     title: 'iPhone 15 Pro in Natural Titanium',
     color: ['#8F8A81', '#ffe7b9', '#6f6c64'],
     img: yellowImg ,
+    modelPath: `${basePath}/models/scene.glb`, // Add this line for deployment
   })
 
   // camera control for the model view
